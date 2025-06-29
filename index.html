@@ -64,7 +64,13 @@
           <li class="nav-item">
             <a class="nav-link js-scroll" href="#contact">Contact</a>
           </li>
-          
+           <li class="nav-item">
+            <label class="theme-switch nav-link">
+              <input type="checkbox" id="theme-toggle">
+              <span class="slider"></span>
+            </label>          
+          </li>
+          </li>
         </ul>
       </div>
     </div>
@@ -420,6 +426,7 @@
           </div>
         </div>
         <div class="row">
+        <div class="row equal-height-row">
         <div class="col-md-4">
           <div class="work-box">
             <div class="work-img">
@@ -583,7 +590,7 @@
               </div>
             </div>
           </div>
-          
+        </div>
           <!-- <div class="col-md-4">
             <div class="work-box">
               <div class="work-img">
@@ -622,56 +629,58 @@
           </div>
         </div>
         <div class="row justify-content-around">
-          <div class="col-md-4">
-            <div class="work-box">
-              <div class="work-img">
-                  <a href="https://ieeexplore.ieee.org/document/10307184">
-                    <img src="assets/img/Extras/bird.jpg" alt="" class="img-fluid">
-                  </a>
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <p>Research Paper published in 14th ICCCNT Conference 2023,
-                      IEEE Xplore</p>
-                      <p class="w-title">A Deep Learning Based Method for Categorization of Indian Birds Species</p>
+          <div class="row equal-height-row">
+            <div class="col-md-4">
+              <div class="work-box">
+                <div class="work-img">
+                    <a href="https://ieeexplore.ieee.org/document/10307184">
+                      <img src="assets/img/Extras/bird.jpg" alt="" class="img-fluid">
+                    </a>
+                  </div>
+                </a>
+                <div class="work-content">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <p>Research Paper published in 14th ICCCNT Conference 2023,
+                        IEEE Xplore</p>
+                        <p class="w-title">A Deep Learning Based Method for Categorization of Indian Birds Species</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="work-box">
-                <div class="work-img">
-                  <a href="https://drive.google.com/drive/folders/1uMr96PgEuOvtbW9kkQqOMO8J63JwX7L3?usp=sharing">
-                    <img src="assets/img/Extras/FreshScan.jpg" alt="" class="img-fluid">
-                  </a>
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <p>Patent, 2023/04889, granted on 20th December, 2023</p>
-                    <p class="w-title">A system for evaluating the fruit's freshness using machine learning techniques.</p>
+            <div class="col-md-4">
+              <div class="work-box">
+                  <div class="work-img">
+                    <a href="https://drive.google.com/drive/folders/1uMr96PgEuOvtbW9kkQqOMO8J63JwX7L3?usp=sharing">
+                      <img src="assets/img/Extras/FreshScan.jpg" alt="" class="img-fluid">
+                    </a>
+                  </div>
+                </a>
+                <div class="work-content">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <p>Patent, 2023/04889, granted on 20th December, 2023</p>
+                      <p class="w-title">A system for evaluating the fruit's freshness using machine learning techniques.</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="work-box">
-                <div class="work-img">
-                  <a href="https://medium.com/@jainam_rajput/from-confusion-to-clarity-how-ai-can-revolutionize-your-literature-review-process-d2fd6969c1ed">
-                    <img src="assets/img/Extras/blog.png" alt="" class="img-fluid">
-                  </a>
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <p>Medium Blog</p>
-                    <p class="w-title">From Confusion to Clarity: How AI Can Revolutionize Your Literature Review Process</p>
+            <div class="col-md-4">
+              <div class="work-box">
+                  <div class="work-img">
+                    <a href="https://medium.com/@jainam_rajput/from-confusion-to-clarity-how-ai-can-revolutionize-your-literature-review-process-d2fd6969c1ed">
+                      <img src="assets/img/Extras/blog.png" alt="" class="img-fluid">
+                    </a>
+                  </div>
+                </a>
+                <div class="work-content">
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <p>Medium Blog</p>
+                      <p class="w-title">From Confusion to Clarity: How AI Can Revolutionize Your Literature Review Process</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -871,6 +880,28 @@
   <script src="https://kit.fontawesome.com/577eb74294.js" crossorigin="anonymous"></script>
 
   <script src="assets/js/main.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggleSwitch = document.getElementById('theme-toggle');
+    const storedTheme = localStorage.getItem('theme');
+
+    if (storedTheme === 'dark') {
+      document.body.classList.add('dark-mode');
+      toggleSwitch.checked = true;
+    }
+
+    toggleSwitch.addEventListener('change', function () {
+      if (this.checked) {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  });
+</script>
+
 
 </body>
 

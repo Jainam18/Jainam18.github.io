@@ -324,6 +324,14 @@ a:hover {
   color: #fff;
 }
 
+body.dark-mode .back-to-top {
+  background: #bb86fc;
+}
+
+body.dark-mode .back-to-top i {
+  color: #fff;
+}
+
 @media (max-width: 768px) {
   .back-to-top {
     bottom: 15px;
@@ -622,6 +630,46 @@ a:hover {
   opacity: 0.9;
 }
 
+.theme-switch {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.theme-switch .slider {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 34px;
+  transition: 0.4s;
+}
+
+.theme-switch .slider::before {
+  content: "";
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.theme-switch input:checked + .slider {
+  background-color: #333;
+}
+
+.theme-switch input:checked + .slider::before {
+  transform: translateX(20px);
+}
+
 /*--------------------------------------------------------------
 # Intro Section
 --------------------------------------------------------------*/
@@ -786,6 +834,14 @@ a:hover {
 .service-box .s-description {
   color: #4e4e4e;
 }
+.services-mf .col-md-4 {
+  display: flex;
+}
+
+.services-mf .service-box {
+  flex: 1;
+}
+
 
 /*--------------------------------------------------------------
 # Counter
@@ -820,12 +876,28 @@ a:hover {
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
+/* Make all .work-box elements the same height */
+.equal-height-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.equal-height-row > .col-md-4 {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
 .work-box {
   margin-bottom: 3rem;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   background-color: #fff;
   border-radius: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .work-box:hover img {
@@ -1448,4 +1520,57 @@ a:hover {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: center;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+  color: #6a5f5f;
+}
+
+body.dark-mode li{
+  color:black;
+}
+
+body.dark-mode p{
+  color:black;
+}
+body.dark-mode a {
+  color: #07000f;
+}
+
+body.dark-mode a:hover {
+  color: #bb86fc;
+}
+
+body.dark-mode .navbar-b.navbar-reduce {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .navbar-b.navbar-reduce .nav-link {
+  color: #e0e0e0;
+}
+
+body.dark-mode .navbar-b.navbar-reduce .nav-link:hover,
+body.dark-mode .navbar-b.navbar-reduce .active > .nav-link,
+body.dark-mode .navbar-b.navbar-reduce .nav-link.active {
+  color: #bb86fc;
+}
+
+body.dark-mode .navbar-b.navbar-reduce .navbar-brand {
+  color: #bb86fc;
+}
+
+
+body.dark-mode .overlay-mf {
+  background-color: #000;
 }
