@@ -1,908 +1,708 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jainam Rajput — Portfolio</title>
+  <meta name="description" content="Portfolio Website of Jainam Rajput" />
+  <meta name="keywords" content="jainam, rajput, portfolio, machine learning, data science, engineer" />
+  <meta name="image" property="og:image" content="assets/img/linkedin_bg.png" />
 
-  <title>Jainam Rajput</title>
-  <meta content="Portfolio Website of Jainam Rajput" name="description">
-  <meta content="jainam, rajput, portofolio, machine learning, data science, engineer" name="keywords">
-  <meta name="image" property="og:image" content="assets/img/linkedin_bg.png">
+  <link rel="icon" href="assets/img/icon_web_3.png" />
 
-  <link href="assets/img/icon_web_3.png" rel="icon"> 
+  <!-- Fonts (inter + jetbrains mono) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" />
 
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="assets/vendor/ionicons/css/ionicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
-
-  <link href="assets/css/style.css" rel="stylesheet">
-
+<!-- Font Awesome 5 for fab fa-kaggle, fa-youtube-play etc. -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="assets/css/style_1.css" />
 </head>
+<body>
+  <!-- ===== Sidebar (sticky) ===== -->
+  <aside class="sidebar" aria-label="Primary">
+    <div class="brand">
+      <div class="avatar">
+        <img src="assets/img/image_0.JPG" alt="Portrait of Jainam Rajput">
+      </div>
+      <h1 class="brand__name">Jainam Rajput</h1>
+      <p class="brand__role">Machine Learning Engineer · Data Scientist</p>
 
-<body id="page-top">
+      <div class="brand__cta">
+        <a class="btn" href="https://drive.google.com/drive/folders/1jV8hI1q3QqRN8x4rXMlsU0ufbkUZSuUR?usp=sharing" target="_blank" rel="noopener">
+          <span>Resume</span>
+        </a>
+        <button id="themeToggle" class="btn btn--ghost" aria-label="Toggle dark mode">🌙</button>
+      </div>
+    </div>
 
-  <nav class="navbar navbar-b navbar-trans navbar-expand-md fixed-top" id="mainNav">
-    <div class="container">
-      <!-- <a class="navbar-brand js-scroll" href="">Portfolio</a> -->
-      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarDefault" aria-controls="navbarDefault" aria-expanded="false" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="#education">Education</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Experience
+    <nav class="nav">
+      <a class="nav__link" href="#home">Home</a>
+      <a class="nav__link" href="#about">About</a>
+      <a class="nav__link" href="#education">Education</a>
+      <details class="nav__details">
+        <summary>Experience</summary>
+        <a class="nav__sublink" href="#work">Work Experience</a>
+        <a class="nav__sublink" href="#mentorship">Mentorship</a>
+      </details>
+      <a class="nav__link" href="#projects">Projects</a>
+      <a class="nav__link" href="#publication">Publications</a>
+      <a class="nav__link" href="#achievements">Achievements</a>
+      <a class="nav__link" href="#certifications">Certifications</a>
+      <a class="nav__link" href="#contact">Contact</a>
+    </nav>
+
+    <!-- <div class="socials">
+      <a href="https://www.linkedin.com/in/jainam-rajput-3852661b4/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <img src="assets/img/Footer/linkedin.svg" alt="" />
+      </a>
+      <a href="https://github.com/Jainam18" target="_blank" rel="noopener" aria-label="GitHub">
+        <img src="assets/img/Footer/github.svg" alt="" />
+      </a>
+      <a href="https://www.kaggle.com/jainamrajput" target="_blank" rel="noopener" aria-label="Kaggle">
+        <img src="assets/img/Footer/kaggle.svg" alt="" />
+      </a>
+    </div> -->
+  </aside>
+
+  <!-- ===== Page content ===== -->
+  <main class="page">
+    <!-- Hero -->
+    <header id="home" class="section hero">
+    <div class="hero__badge">Open to Full Time Data Science Roles</div>
+    <h2 class="hero__title">Hi, I'm <span class="underline">Jainam</span>.</h2>
+    <p class="hero__subtitle">
+        I build data-driven and AI-assisted products: from <strong>enterprise RAG chatbots</strong> to
+        <strong>predictive analytics</strong> and <strong>agentic prompt optimization</strong>.
+    </p>
+    <div class="hero__chips">
+        <span class="chip">Python</span>
+        <span class="chip">Pandas</span>
+        <span class="chip">scikit-learn</span>
+        <span class="chip">TensorFlow</span>
+        <span class="chip">LangChain</span>
+        <span class="chip">DsPy</span>
+        <span class="chip">Azure OpenAI</span>
+        <span class="chip">SQL</span>
+        <span class="chip">Tableau</span>
+    </div>
+    <div class="hero__cta">
+        <a class="btn" href="#projects">See Projects</a>
+        <a class="btn btn--ghost" href="#contact">Contact</a>
+    </div>
+    </header>
+
+    <!-- About -->
+    <section id="about" class="section card">
+      <h3 class="section__title">About</h3>
+      <div class="grid grid--2">
+        <div>
+          <p>
+            I’m a graduate student at the <strong>University of Illinois Urbana-Champaign</strong> (MS in Information
+            Management) with a focus on <strong>Machine Learning</strong>, <strong>Data Science</strong>, and
+            <strong>Generative AI</strong>. I currently work at <strong>Deloitte</strong> (Audit &amp; Assurance) as a
+            Data Science Intern, improving AI services with agentic <em>prompt optimization</em> and reliable evaluation.
+          </p>
+          <ul class="list">
+            <li><strong>Patent Holder:</strong> Intelligent Fruit Freshness Grading (Computer Vision)</li>
+            <li><strong>Published Researcher:</strong> Deep Learning for Indian Birds Classification</li>
+            <li><strong>Domains:</strong> Data Science, ML, NLP</li>
+          </ul>
+          <p>
+            When I’m not experimenting with models, you’ll find me playing guitar, reading, or on a cricket/table tennis court.
+          </p>
+        </div>
+        <div>
+          <h4>Skills</h4>
+          <ul class="list">
+            <li><strong>Programming:</strong> Python, SQL, R, JavaScript</li>
+            <li><strong>Analytics &amp; ML:</strong> NumPy, Pandas, scikit-learn, TensorFlow</li>
+            <li><strong>Tools:</strong> MySQL, MongoDB, SQL Server, Tableau, Power BI, Selenium</li>
+            <li><strong>Software:</strong> Jupyter, VS Code, MS Office</li>
+          </ul>
+          <a class="btn btn--ghost" href="https://drive.google.com/drive/folders/1jV8hI1q3QqRN8x4rXMlsU0ufbkUZSuUR?usp=sharing" target="_blank" rel="noopener">View Resume</a>
+        </div>
+      </div>
+    </section>
+    <section id="stats" class="section card reveal">
+      <h3 class="section__title">Stats</h3>
+      <div class="grid grid--3">
+        <article class="stat">
+          <div class="stat__num" data-count="50">0</div>
+          <div class="stat__label">Models Trained</div>
+        </article>
+        <article class="stat">
+          <div class="stat__num" data-count="12">0</div>
+          <div class="stat__label">End-to-end Projects</div>
+        </article>
+        <article class="stat">
+          <div class="stat__num" data-count="3">0</div>
+          <div class="stat__label">Awards / Publications</div>
+        </article>
+      </div>
+    </section>
+    <!-- Education -->
+    <section id="education" class="section">
+      <h3 class="section__title">Education</h3>
+      <div class="grid grid--2">
+        <article class="card card--row">
+          <img class="card__thumb" src="assets/img/Education/illinois.jpg" alt="University of Illinois Urbana-Champaign">
+          <div class="card__body">
+            <h4 class="card__title">M.S. Information Management</h4>
+            <p class="muted">University of Illinois Urbana-Champaign · Aug 2024 – May 2026</p>
+            <p class="muted">GPA: 4.00</p>
+          </div>
+        </article>
+        <article class="card card--row">
+          <img class="card__thumb" src="assets/img/Education/mu.png" alt="University of Mumbai">
+          <div class="card__body">
+            <h4 class="card__title">B.Tech. Computer Science &amp; Engineering</h4>
+            <p class="muted">University of Mumbai · 2020 – 2024</p>
+            <p class="muted">CGPA: 9.47</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Work Experience -->
+    <section id="work" class="section">
+      <h3 class="section__title">Work Experience</h3>
+      <div class="grid grid--2">
+        <article class="card">
+          <div class="card__media">
+            <a href="https://www2.deloitte.com/us/en.html" target="_blank" rel="noopener">
+              <img src="assets/img/Work Experience/us-deloitte-logo.avif" alt="Deloitte logo">
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#work">Work Experience
-              <a class="dropdown-item" href="#mentorship">Mentorship</a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="#projects">Projects</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="#publication">Publications</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="#achievements">Achievements</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="#certifications">Certifications</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll" href="#contact">Contact</a>
-          </li>
-           <li class="nav-item">
-            <label class="theme-switch nav-link">
-              <input type="checkbox" id="theme-toggle">
-              <span class="slider"></span>
-            </label>          
-          </li>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <div id="home" class="intro route bg-image" style="background-image: url(assets/img/background_2.png)">
-    <div class="overlay-itro"></div>
-    <div class="intro-content display-table">
-      <div class="table-cell">
-        <div class="container">
-          <h1 class="intro-title mb-4">Jainam Rajput</h1>
-          <p class="intro-subtitle"><span class="text-slider-items">Machine Learning Engineer, Data Scientist</span><strong class="text-slider"></strong></p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <main id="main">
-
-    <section id="about" class="about-mf sect-pt4 route">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="box-shadow-full" style="border-radius: 1rem;">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="row">
-                    <div class="col-sm-3 "></div>
-                    <div class="col-sm-4 col-md-5">
-                      <div class="about-img">
-                        <img src="assets/img/image_0.JPG" class="img-fluid rounded b-shadow-a" alt="">
-                      </div>
-                    </div>
-                    <div class="col-sm-3 "></div>
-                  </div>
-                  <div class="skill-mf">
-                    <p class="title-s">Skills</p>
-                    <ul>
-                    <li>Programming Languages: Python, SQL, R, Javascript</li>
-                    <li>Analytics and ML: NumPy, Pandas, TensorFlow, Scikit-learn</li>
-                    </ul>
-                    <div class="progress">
-                      </div>
-                      <p class="title-s">Tools</p>
-                      <ul>
-                      <li>Database Tools: SQL Server Management, MySQL, MongoDB</li>
-                      <li>Visualization Tools: Tableau, Python Libraries, PowerBI</li>
-                      <li>Automation: Selenium</li>
-                      </ul>
-                    <div class="progress">
-                       </div>
-                       <p class="title-s">Software</p>
-                       <span>Jupyter, VS Code, Microsoft Office</span> <span class="pull-right"></span>
-                       <div class="progress">
-                         </div>
-                         <p class="title-s">Domains</p>
-                       <span>Data Science, Machine Learning, Natural Language Processing</span> <span class="pull-right"></span>
-                       <div class="progress">
-                         </div>
-                         <p class="title-s">Resume</p>
-                       <span><a href=https://drive.google.com/drive/folders/1jV8hI1q3QqRN8x4rXMlsU0ufbkUZSuUR?usp=sharing" target="_blank"><img src="assets/img/Extras/cv.png" width="60rem;" alt=""></a></span> <span class="pull-right"></span>
-                       <div class="progress">
-                        </div>
-                        <span>Currently seeking: Summer internships in Data Science, Data Analysis, Machine Learning, and AI where I can contribute my skills and passion for cutting-edge technology.</span> <span class="pull-right"></span>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="about-me pt-4 pt-md-0">
-                    
-                    <div class="title-box-2">
-                      <h5 class="title-left">
-                        About me
-                      </h5>
-                    </div>
-                    
-                    <p class="lead">
-                      Hello! 
-                      I'm Jainam, a graduate student at the University of Illinois - Urbana Champaign, specializing in Machine Learning and Artificial Intelligence. With a strong foundation in Computer Science and Engineering from the University of Mumbai, I'm passionate about pushing the boundaries of Generative AI and Data Science.
-                    </p>
-                    <p class="lead">
-                      Currently, I'm interning at Deloitte as a Data Science Intern, working on AI-powered solutions within the Audit & Assurance domain.
-                    </p>
-                    <p class="lead">
-                      <p class="lead">
-                        <b>Patent Holder:</b>Led the only team in my cohort to secure a patent for "Intelligent Fruit Freshness Grading"</p>
-                        
-                      <p class="lead">
-                        <b>Published Researcher:</b> Authored a paper on "A Deep Learning Based Method for Classification of Indian Birds Species"
-                      </p>
-                      <p class="lead">
-                        <b>Diverse Project Experience:</b> From computer vision to natural language processing, I've tackled a wide range of ML challenges
-                      </p>
-                      <p class="lead">
-                        <b>Continuous Learner: </b>
-                        Always eager to explore new technologies and methodologies in the rapidly evolving AI landscape
-                      </p>
-                    </p>
-                    <p class="lead">
-                      My journey in tech began early, and I've since honed my skills through various projects and internships. I bring a unique blend of theoretical knowledge and practical experience to every challenge I face.
-                    </p> 
-                    <p class="lead">
-                      When I'm not coding or exploring datasets, you might find me strumming a guitar, diving into a good book, or enjoying a game of cricket or table tennis. I believe in the power of diverse experiences to fuel innovation and creative problem-solvings and challenges.
-                    </p> 
-                    </p> 
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
-        </div>
+          <div class="card__body">
+            <h4 class="card__title">Data Science Intern</h4>
+            <p class="muted">Deloitte &amp; Touche LLP · Jun 2025 – Present</p>
+            <p>Agentic pipelines for prompt optimization (DsPy, LangChain, Azure OpenAI), evaluation loops, and productionized AI utilities.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__media">
+            <a href="https://ischool.illinois.edu/research/projects/combini-connecting-complementary-medicine-and-biological-knowledge-support" target="_blank" rel="noopener">
+              <img src="assets/img/Extras/health-medical-project.jpg" alt="NCSA research project cover">
+            </a>
+          </div>
+          <div class="card__body">
+            <h4 class="card__title">Graduate Student Researcher</h4>
+            <p class="muted">National Center for Supercomputing Applications · Jan 2025 – May 2025</p>
+            <p>Biomedical NLP and knowledge integration; analytics for complementary medicine and biological knowledge support.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__media">
+            <a href="https://nimbusnext.com/" target="_blank" rel="noopener">
+              <img src="assets/img/Work Experience/nimbusnext_logo.jpg" alt="Nimbusnext">
+            </a>
+          </div>
+          <div class="card__body">
+            <h4 class="card__title">Machine Learning Intern</h4>
+            <p class="muted">Nimbusnext Technologies · Jun 2023 – Sep 2023</p>
+            <p>Built classic ML/NLP pipelines and evaluation dashboards for applied use-cases.</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__media">
+            <a href="https://www.linkedin.com/company/ozibook/" target="_blank" rel="noopener">
+              <img src="assets/img/Work Experience/ozibook.jpg" alt="Ozibook">
+            </a>
+          </div>
+          <div class="card__body">
+            <h4 class="card__title">Data Analyst Intern</h4>
+            <p class="muted">Ozibook Technologies · Nov 2022 – Feb 2023</p>
+            <p>Reporting, analytics automation, and business insight generation.</p>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section id="education" class="portfolio-mf sect-pt4 route">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="title-box text-center">
-              <h3 class="title-a">
-                Education
-              </h3>
-              <div class="line-mf"></div>
-            </div>
+    <!-- Mentorship / Positions -->
+    <section id="mentorship" class="section">
+      <h3 class="section__title">Mentorship &amp; Positions</h3>
+      <div class="grid grid--2">
+        <article class="card card--row">
+          <img class="card__thumb" src="assets/img/PoR/compute.png" alt="Compute club">
+          <div class="card__body">
+            <h4 class="card__title">Technical Vice Chairperson</h4>
+            <p class="muted">2021 – 2023 · Mumbai, India</p>
           </div>
-        </div>
-        <div class="row">
-          
-          <div class="col-md-1">
+        </article>
+        <article class="card card--row">
+          <img class="card__thumb" src="assets/img/PoR/ras.jpg" alt="Robotics and Automation Society">
+          <div class="card__body">
+            <h4 class="card__title">Technical Committee Member, RAS</h4>
+            <p class="muted">2021 – 2022 · Mumbai, India</p>
           </div>
-          <div class="row justify-content-center">
-            <div class="col-md-5">
-              <div class="work-box">
-                  <div class="work-img">
-                    <img src="assets/img/Education/illinois.jpg" alt="" class="img-fluid">
-                  </div>
-                </a>
-                <div class="work-content">
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <h2 class="w-title">Master of Science in Information Management</h2>
-                      <div class="w-more">
-                        <h6 class="w-date">August 2024 -May 2026</h6>
-                        <h6 class="w-date">GPA: 4.00</h6>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> 
-            <div class="col-md-5">
-              <div class="work-box">
-                  <div class="work-img">
-                    <img src="assets/img/Education/mu.png" alt="" class="img-fluid">
-                  </div>
-                </a>
-                <div class="work-content">
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <h2 class="w-title">Bachelor of Technology in Computer Science and Engineering</h2>
-                      <div class="w-more">
-                         <h6 class="w-date">2020 - 2024</h6>
-                         <h6 class="w-date">CGPA: 9.47</h6>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-1">
-          </div>
-        </div>
+        </article>
       </div>
     </section>
 
-    <section id="work" class="portfolio-mf sect-pt4 route">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="title-box text-center">
-              <h3 class="title-a">
-                Work Experience
-              </h3>
-              <div class="line-mf"></div>
-            </div>
-          </div>
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <h3 class="section__title">Projects</h3>
+      <div class="filterbar">
+        <div class="filterbar__chips" id="filterChips">
+            <!-- Buttons control by data-filter; keep or edit tags as you like -->
+            <button class="chip chip--active" data-filter="all">All</button>
+            <button class="chip" data-filter="RAG">RAG</button>
+            <button class="chip" data-filter="NLP">NLP</button>
+            <button class="chip" data-filter="Vision">Vision</button>
+            <button class="chip" data-filter="Simulation">Simulation</button>
+            <button class="chip" data-filter="Forecasting">Forecasting</button>
+            <button class="chip" data-filter="Time Series">Time Series</button>
         </div>
-        <div class="row">
-          <div class="row justify-content-around">
-            <div class="col-md-4">
-              <div class="work-box">
-                <div class="work-img">
-                    <a href="https://www2.deloitte.com/us/en.html"><img src="assets/img/Work Experience/us-deloitte-logo.avif" alt="" class="img-fluid"></a>
-                  </div>
-                </a>
-                <div class="work-content">
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <h1 class="w-title">Deloitte & Touche LLP</h1>
-                      <h2 class="w-title">Data Science Intern</h2>
-                      <div class="w-more">
-                        <span class="w-date">June 2025 - Present</span>
-                      </div>
-                    </div>
-                  
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="work-box">
-                <div class="work-img">
-                    <a href="https://ischool.illinois.edu/research/projects/combini-connecting-complementary-medicine-and-biological-knowledge-support"><img src="assets/img/Extras/health-medical-project.jpg" alt="" class="img-fluid"></a>
-                  </div>
-                </a>
-                <div class="work-content">
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <h1 class="w-title">National Center for Supercomputing Applications</h1>
-                      <h2 class="w-title">Graduate Student Researcher</h2>
-                      <div class="w-more">
-                        <span class="w-date">January 2025 - May 2025</span>
-                      </div>
-                    </div>
-                  
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="row justify-content-around">
-            <div class="col-md-4">
-              <div class="work-box">
-                  <div class="work-img">
-                    <a href="https://nimbusnext.com/"><img src="assets/img/Work Experience/nimbusnext_logo.jpg" alt="" class="img-fluid"></a>
-                  </div>
-                </a>
-                <div class="work-content">
-                  <div class="row">
-                    <div class="col-sm-10">
-                      <h1 class="w-title">Nimbusnext Technologies</h1>
-                      <h2 class="w-title"> Machine Learning Intern</h2>
-                      <div class="w-more">
-                        <span class="w-date">June 2023 - September 2023</span>
-                      </div>
-                    </div>
-                
-                  </div>
-                </div>
-              </div>
-            </div>
-          
-            <div class="col-md-4">
-              <div class="work-box">
-                <div class="work-img">
-                    <a href="https://www.linkedin.com/company/ozibook/"><img src="assets/img/Work Experience/ozibook.jpg" alt="" class="img-fluid"></a>
-                  </div>
-                </a>
-                <div class="work-content">
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <h1 class="w-title">Ozibook Technologies</h1>
-                      <h2 class="w-title">Data Analyst Intern</h2>
-                      <div class="w-more">
-                        <span class="w-date">November 2022 - February 2023</span>
-                      </div>
-                    </div>
-                  
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Mentorship -->
-    <section id="mentorship" class="portfolio-mf sect-pt4 route">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4"></div>
-          <div class="col-sm-12">
-            <div class="title-box text-center">
-              <h6 class="title-a">
-                Positions of Responsibility
-              </h6>
-              <div class="line-mf"></div>
-            </div>
-          </div>
-          <div class="row justify-content-around">
-            <div class="col-md-4">
-              <div class="work-box">
-                  <div class="work-img">
-                    <img src="assets/img/PoR/compute.png" alt="" class="img-fluid">
-                  </div>
-                </a>
-                <div class="work-content">
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <h2 class="w-title">Technical Vice Chairperson, 2021-2023</h2>
-                      <!-- <h2 class="w-title">Social Media Marketing Manager, 2021-2022</h2> -->
-            
-                      <div class="w-more">
-                        <span class="w-ctegory">Mumbai, India</span> 
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <div class="work-box">
-                  <div class="work-img">
-                    <img src="assets/img/PoR/ras.jpg" alt="" class="img-fluid">
-                  </div>
-                </a>
-                <div class="work-content">
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <h2 class="w-title">Technical Co Committee Member, Robotic and Automation Society, 2021-2022</h2>
-                      <div class="w-more">
-                        <span class="w-ctegory">Mumbai, India</span> 
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <label class="filterbar__search">
+            <input id="projectSearch" type="search" placeholder="Search projects… (e.g., TensorFlow, Walmart, RAG)">
+            <span class="kbd">⌘/Ctrl + K</span>
+        </label>
         </div>
-      </div>
-    </section>
-    
-    
-    <section id="projects" class="blog-mf sect-pt4 route">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="title-box text-center">
-              <h3 class="title-a">
-                Projects
-              </h3>
-              <!-- <p class="subtitle-a">
-                Links:
-              </p> -->
-              <div class="line-mf"></div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-        <div class="row equal-height-row">
-        <div class="col-md-4">
-          <div class="work-box">
-            <div class="work-img">
-              <a href="https://github.com/Jainam18/2024Fall_projects_Delivery_Optimization_Strategy">
-                <img src="assets/img/Extras/logs.png" alt="" class="img-fluid">
-              </a>
-            </div>
+      <div class="grid grid--3">
+        <article class="card project" data-tags="Simulation, Python" data-title="Logistic Delivery Strategy — Monte Carlo">
+          <a href="https://github.com/Jainam18/2024Fall_projects_Delivery_Optimization_Strategy" target="_blank" rel="noopener" class="project__thumb">
+            <img src="assets/img/Extras/logs.png" alt="Delivery optimization project">
           </a>
-          <div class="work-content">
-            <div class="row">
-              <div class="col-sm-12">
-                <h1 class="w-title">Enhancing Logistic Delivery Strategies with Monte Carlo Simulation</h1>
-                <p class="w-title">Compared delivery strategies across 2 hypotheses, reducing computational time and handling large-scale route optimizations, across a delivery window.</p>
-              </div>
-            </div>
+          <div class="card__body">
+            <h4 class="card__title">Logistic Delivery Strategy — Monte Carlo</h4>
+            <p>Compared two hypotheses to reduce compute and scale route optimization in a delivery window.</p>
+            <div class="tags"><span class="tag">Simulation</span><span class="tag">Python</span></div>
           </div>
-        </div>
-      </div>
-        <div class="col-md-4">
-          <div class="work-box">
-              <div class="work-img">
-                <a href="https://github.com/Jainam18/FuelFuturePriceAnalysis">
-                  <img src="assets/img/Extras/fuel.jpg" alt="" class="img-fluid">
-                </a>
-              </div>
-            </a>
-            <div class="work-content">
-              <div class="row">
-                <div class="col-sm-12">
-                  <h1 class="w-title">Fueling Foresight: Predictive Analytics for the Fuel Futures Market</h1>
-                  <p class="w-title">Conducted statistical and predictive analysis using ANOVA and time series modeling methods to analyze relationships between commodity closing prices and volatility.</p>
-                </div>
-              </div>
-            </div>
+        </article>
+
+        <article class="card project" data-tags="Time Series, ANOVA" data-title="Fuel Futures Predictive Analytics">
+          <a href="https://github.com/Jainam18/FuelFuturePriceAnalysis" target="_blank" rel="noopener" class="project__thumb">
+            <img src="assets/img/Extras/fuel.jpg" alt="Fuel futures analytics project">
+          </a>
+          <div class="card__body">
+            <h4 class="card__title">Fuel Futures Predictive Analytics</h4>
+            <p>ANOVA + time-series modeling to understand price/volatility relationships.</p>
+            <div class="tags"><span class="tag">Time Series</span><span class="tag">ANOVA</span></div>
           </div>
-        </div>
-        
-      <div class="col-md-4">
-            <div class="work-box">
-                <div class="work-img">
-                  <a href="https://github.com/Jainam18/Walmart-Sales-Performance-Analysis">
-                    <img src="assets/img/Extras/walmart.jpg" alt="" class="img-fluid">
-                  </a>
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <h1 class="w-title">Walmart Sales Performance Analysis & Forecasting</h1>
-                    <p class="w-title">Created interactive Tableau dashboards visualizing key performance metrics across 45 stores, facilitating real-time sales trends and markdown effectiveness monitoring.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+        </article>
+
+        <article class="card project" data-tags="Tableau, Forecasting" data-title="Walmart Sales Analysis">
+          <a href="https://github.com/Jainam18/Walmart-Sales-Performance-Analysis" target="_blank" rel="noopener" class="project__thumb">
+            <img src="assets/img/Extras/walmart.jpg" alt="Walmart analysis project">
+          </a>
+          <div class="card__body">
+            <h4 class="card__title">Walmart Sales Analysis &amp; Forecasting</h4>
+            <p>Interactive dashboards across 45 stores for real-time trends &amp; markdown insights.</p>
+            <div class="tags"><span class="tag">Tableau</span><span class="tag">Forecasting</span></div>
           </div>
-          <div class="col-md-4">
-            <div class="work-box">
-                <div class="work-img">
-                  <a href="https://github.com/Jainam18/LS_AMG_RAG">
-                    <img src="assets/img/Extras/Enterprise.jpg" alt="" class="img-fluid">
-                  </a>
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <h1 class="w-title">Advanced RAG Chatbot for Enterprise Environment</h1>
-                    <p class="w-title">Composed an advanced RAG enterprise chatbot that is effective in providing faster responses at lower computational costs.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+        </article>
+
+        <article class="card project" data-tags="RAG, LLM, NLP" data-title="Enterprise RAG Chatbot">
+          <a href="https://github.com/Jainam18/LS_AMG_RAG" target="_blank" rel="noopener" class="project__thumb">
+            <img src="assets/img/Extras/Enterprise.jpg" alt="Enterprise RAG chatbot">
+          </a>
+          <div class="card__body">
+            <h4 class="card__title">Enterprise RAG Chatbot</h4>
+            <p>Advanced routing &amp; retrieval for faster answers at lower compute.</p>
+            <div class="tags"><span class="tag">RAG</span><span class="tag">LLM</span></div>
           </div>
-          <div class="col-md-4">
-            <div class="work-box">
-              <div class="work-img">
-                <a href="https://github.com/rkat7/nasa-space-apps-cuberts">
-                  <img src="assets/img/Extras/canopy.png" alt="" class="img-fluid">
-                </a>
-              </div>
-            </a>
-            <div class="work-content">
-              <div class="row">
-                <div class="col-sm-12">
-                  <h1 class="w-title">Canopy: Data-Driven Farming Insights for Smarter Decisions</h1>
-                  <p class="w-title">Designed an application for farmers to get insights from NASA EO data by providing trend analysis and reducing decision making time by 30% for farmers with development of AI utilities.</p>
-                </div>
-              </div>
-            </div>
+        </article>
+
+        <article class="card project" data-tags="E0, Analytics" data-title="Canopy — NASA Space Apps">
+          <a href="https://github.com/rkat7/nasa-space-apps-cuberts" target="_blank" rel="noopener" class="project__thumb">
+            <img src="assets/img/Extras/canopy.png" alt="Canopy NASA app">
+          </a>
+          <div class="card__body">
+            <h4 class="card__title">Canopy — NASA Space Apps</h4>
+            <p>EO data trends; ~30% faster farming decisions with AI utilities.</p>
+            <div class="tags"><span class="tag">EO</span><span class="tag">Analytics</span></div>
           </div>
-        </div>
-          <div class="col-md-4">
-            <div class="work-box">
-                <div class="work-img">
-                  <a href="https://www.kaggle.com/code/jainamrajput/effectivetargettingofadvertisement/notebook">
-                    <img src="assets/img/Extras/advertise.jpg" alt="" class="img-fluid">
-                  </a>
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <h1 class="w-title">Effective Targetting of Advertisements</h1>
-                    <p class="w-title">Developed a machine learning algorithm to predict whether a user will be interested in an advertisement or not, thereby avoiding costly spending on uninterested audiences.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+        </article>
+
+        <article class="card project" data-tags="Classification, Marketing" data-title="Effective Targeting of Ads">
+          <a href="https://www.kaggle.com/code/jainamrajput/effectivetargettingofadvertisement/notebook" target="_blank" rel="noopener" class="project__thumb">
+            <img src="assets/img/Extras/advertise.jpg" alt="Ad targeting">
+          </a>
+          <div class="card__body">
+            <h4 class="card__title">Effective Targeting of Ads</h4>
+            <p>Predict user interest to cut spend on uninterested audiences.</p>
+            <div class="tags"><span class="tag">Classification</span><span class="tag">Marketing</span></div>
           </div>
-          <div class="col-md-4">
-            <div class="work-box">
-              <div class="work-img">
-                <a href="https://vimeo.com/916436389?share=copy">
-                    <img src="assets/img/Extras/FreshScan.jpg" alt="" class="img-fluid">
-                  </a>
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <h1 class="w-title">FreshScan+ Intelligent Freshness Grading and Expiry Date Recognition System</h1>
-                    <p class="w-title">Developed two innovative approaches for assessing fruit freshness and detecting the expiry date of packaged food products using Computer Vision Technique</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+        </article>
+
+        <article class="card project" data-tags="OpenCV, Vision" data-title="FreshScan+ (CV)">
+          <a href="https://vimeo.com/916436389?share=copy" target="_blank" rel="noopener" class="project__thumb">
+            <img src="assets/img/Extras/FreshScan.jpg" alt="FreshScan+">
+          </a>
+          <div class="card__body">
+            <h4 class="card__title">FreshScan+ (CV)</h4>
+            <p>Freshness grading &amp; expiry detection via computer vision.</p>
+            <div class="tags"><span class="tag">OpenCV</span><span class="tag">Vision</span></div>
           </div>
-          <div class="col-md-4">
-            <div class="work-box">
-                <div class="work-img">
-                  <a href="https://github.com/Jainam18/Real-time-Ethereum-Analysis">
-                    <img src="assets/img/Extras/ethanalytics.jpg" alt="" class="img-fluid">
-                  </a>
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <h1 class="w-title">EthAnalytics: Real-time-Ethereum-Analysis</h1>
-                    <p class="w-title">Developed an innovative solution capable of handling large data volumes, showcasing the importance of modern big data tools and techniques for efficient data management and analysis.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+        </article>
+
+        <article class="card project" data-tags="Streaming, Big Data" data-title="EthAnalytics (Realtime)s">
+          <a href="https://github.com/Jainam18/Real-time-Ethereum-Analysis" target="_blank" rel="noopener" class="project__thumb">
+            <img src="assets/img/Extras/ethanalytics.jpg" alt="EthAnalytics">
+          </a>
+          <div class="card__body">
+            <h4 class="card__title">EthAnalytics (Realtime)</h4>
+            <p>Big-data pipelines for large-scale on-chain analytics.</p>
+            <div class="tags"><span class="tag">Streaming</span><span class="tag">Big Data</span></div>
           </div>
-          <div class="col-md-4">
-            <div class="work-box">
-              <div class="work-img">
-                <a href="https://www.kaggle.com/code/jainamrajput/loganomalydetection/notebook">
-                    <img src="assets/img/Extras/LogAnomaly.jpg" alt="" class="img-fluid">
-                  </a>
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <h1 class="w-title">Log Anomaly Detection</h1>
-                    <p class="w-title">Developed a robust system to detect anomalies in logs deposited by softwares using Machine Learning, Deep Learning, and Natural Language Processing Techniques.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+        </article>
+
+        <article class="card project" data-tags="NLP, Detection" data-title="Log Anomaly Detection">
+          <a href="https://www.kaggle.com/code/jainamrajput/loganomalydetection/notebook" target="_blank" rel="noopener" class="project__thumb">
+            <img src="assets/img/Extras/LogAnomaly.jpg" alt="Log anomaly detection">
+          </a>
+          <div class="card__body">
+            <h4 class="card__title">Log Anomaly Detection</h4>
+            <p>ML/DL/NLP methods to catch anomalies in software logs.</p>
+            <div class="tags"><span class="tag">NLP</span><span class="tag">Detection</span></div>
           </div>
-        </div>
-          <!-- <div class="col-md-4">
-            <div class="work-box">
-              <div class="work-img">
-                <a href="https://www.kaggle.com/code/jainamrajput/mining-industry-law-regulation-chatbot-2">
-                  <img src="assets/img/Extras/mining.jpg" alt="" class="img-fluid">
-                </a>
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-12">
-                    <h1 class="w-title">Mining Laws and Regulations Chatbot</h1>
-                    <p class="w-title">Developed a Retrieval Augmented Generative (RAG) chatbot that can respond to text queries about various Acts, Rules, and Regulations applicable to the mining industry.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> -->
-        </div>
-      </div>
-    </section>
-    
-    <section id="publication" class="blog-mf sect-pt4 route">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="title-box text-center">
-              <h3 class="title-a">
-                Publications
-              </h3>
-              <!-- <p class="subtitle-a">
-                Links:
-              </p> -->
-              <div class="line-mf"></div>
-            </div>
-          </div>
-        </div>
-        <div class="row justify-content-around">
-          <div class="row equal-height-row">
-            <div class="col-md-4">
-              <div class="work-box">
-                <div class="work-img">
-                    <a href="https://ieeexplore.ieee.org/document/10307184">
-                      <img src="assets/img/Extras/bird.jpg" alt="" class="img-fluid">
-                    </a>
-                  </div>
-                </a>
-                <div class="work-content">
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <p>Research Paper published in 14th ICCCNT Conference 2023,
-                        IEEE Xplore</p>
-                        <p class="w-title">A Deep Learning Based Method for Categorization of Indian Birds Species</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="work-box">
-                  <div class="work-img">
-                    <a href="https://drive.google.com/drive/folders/1uMr96PgEuOvtbW9kkQqOMO8J63JwX7L3?usp=sharing">
-                      <img src="assets/img/Extras/FreshScan.jpg" alt="" class="img-fluid">
-                    </a>
-                  </div>
-                </a>
-                <div class="work-content">
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <p>Patent, 2023/04889, granted on 20th December, 2023</p>
-                      <p class="w-title">A system for evaluating the fruit's freshness using machine learning techniques.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="work-box">
-                  <div class="work-img">
-                    <a href="https://medium.com/@jainam_rajput/from-confusion-to-clarity-how-ai-can-revolutionize-your-literature-review-process-d2fd6969c1ed">
-                      <img src="assets/img/Extras/blog.png" alt="" class="img-fluid">
-                    </a>
-                  </div>
-                </a>
-                <div class="work-content">
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <p>Medium Blog</p>
-                      <p class="w-title">From Confusion to Clarity: How AI Can Revolutionize Your Literature Review Process</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        </article>
       </div>
     </section>
 
-    <section id="achievements" class="services-mf pt-5 route">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="title-box text-center">
-              <h3 class="title-a">
-                Achievements
-              </h3>
-              <div class="line-mf"></div>
-            </div>
+    <!-- Publications -->
+    <section id="publication" class="section">
+      <h3 class="section__title">Publications</h3>
+      <div class="grid grid--3">
+        <article class="card">
+          <a class="card__media" href="https://ieeexplore.ieee.org/document/10307184" target="_blank" rel="noopener">
+            <img src="assets/img/Extras/bird.jpg" alt="Indian birds classification paper">
+          </a>
+          <div class="card__body">
+            <p class="muted">ICCCNT 2023 (IEEE Xplore)</p>
+            <h4 class="card__title">Deep Learning for Categorization of Indian Birds Species</h4>
           </div>
-        </div>
-        <div class="row d-flex justify-content-center">
-          <div class="col-md-4">
-            <div class="service-box">
-              <div class="work-img">
-                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7249487719821623297/"><img src="assets/img/Certi/nasa.jpg" alt="" class="img-fluid"></a>
-              </div>
-              <div class="work-content text-center">
-                <h2 class="w-title">NASA Space Apps Challenge Chicago</h2>
-                <p class="w-ctegory">
-                  <p>Judge's Choice Award</p>
-                  <p>Delivered a solution to enhance the agricultural decision making experience for farmers by focusing on simplified user interface and AI utilities integration</p>
-                </p>
-              </div>
-            </div>
-            
+        </article>
+
+        <article class="card">
+          <a class="card__media" href="https://drive.google.com/drive/folders/1uMr96PgEuOvtbW9kkQqOMO8J63JwX7L3?usp=sharing" target="_blank" rel="noopener">
+            <img src="assets/img/Extras/FreshScan.jpg" alt="Patent cover">
+          </a>
+          <div class="card__body">
+            <p class="muted">Patent 2023/04889 · Granted Dec 20, 2023</p>
+            <h4 class="card__title">System for Evaluating Fruit Freshness using ML</h4>
           </div>
-        </div>
+        </article>
+
+        <article class="card">
+          <a class="card__media" href="https://medium.com/@jainam_rajput/from-confusion-to-clarity-how-ai-can-revolutionize-your-literature-review-process-d2fd6969c1ed" target="_blank" rel="noopener">
+            <img src="assets/img/Extras/blog.png" alt="Medium blog cover">
+          </a>
+          <div class="card__body">
+            <p class="muted">Medium Blog</p>
+            <h4 class="card__title">AI for Literature Review: From Confusion to Clarity</h4>
+          </div>
+        </article>
       </div>
     </section>
 
-
-    <section id="certifications" class="services-mf pt-5 route">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="title-box text-center">
-              <h3 class="title-a">
-                Certifications
-              </h3>
-              <div class="line-mf"></div>
-            </div>
+    <!-- Achievements -->
+    <section id="achievements" class="section">
+      <h3 class="section__title">Achievements</h3>
+      <div class="grid grid--2">
+        <article class="card card--row">
+          <img class="card__thumb" src="assets/img/Certi/nasa.jpg" alt="NASA Space Apps Chicago">
+          <div class="card__body">
+            <h4 class="card__title">NASA Space Apps Challenge — Chicago</h4>
+            <p class="muted">Judge's Choice Award</p>
+            <p>Farmer-centric insights with AI utilities for faster decisions.</p>
+            <a class="btn btn--ghost" href="https://siebelschool.illinois.edu/news/nasa-apps-challenge" target="_blank" rel="noopener">See Post</a>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="service-box">
-              <div class="work-img">
-                <a href="https://courses.nvidia.com/certificates/1497129faf3b45918e3b84fc0f1d15be/"><img src="assets/img/Certi/nvidia.png" alt="" class="img-fluid"></a>
-              </div>
-              <div class="work-content">
-                <h2 class="w-title">Fundamentals of Accelerated Computing with CUDA Python</h2>
-                <p class="w-ctegory">
-                  Issued March 2024
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="service-box">
-              <div class="work-img">
-                <a href="https://www.credly.com/badges/4ff6da38-c115-4eb2-973f-eb9e18787896"><img src="assets/img/Certi/aws_cf.png" alt="" class="img-fluid"></a>
-              </div>
-              <div class="work-content">
-                <h2 class="w-title">AWS Academy Cloud Architecting</h2>
-                <p class="w-ctegory">
-                  Issued May 2023
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="service-box">
-              <div class="work-img">
-                <a href="https://www.credly.com/badges/86ac56ad-fe00-4c9b-982f-728355820fa9"><img src="assets/img/Certi/aws_de.png" alt="" class="img-fluid"></a>
-              </div>
-              <div class="work-content">
-                <h2 class="w-title">AWS Academy Data Engineering</h2>
-                <p class="w-ctegory">
-                  Issued May 2023
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="service-box">
-              <div class="work-img">
-                <a href="https://www.credly.com/badges/3d966899-dda7-48e8-b70a-f482496f8001"><img src="assets/img/Certi/aws_cf.png" alt="" class="img-fluid"></a>
-              </div>
-              <div class="work-content">
-                <h2 class="w-title">AWS Academy Cloud Foundations</h2>
-                <p class="w-ctegory">
-                  Issued June 2022
-                </p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-md-4">
-            <div class="service-box">
-              <div class="work-img">
-                <a href="https://www.credly.com/badges/96d38164-5c4c-444b-8ce7-6f50a55b2956/print"><img src="assets/img/Certi/aws_mlf.png" alt="" class="img-fluid"></a>
-              </div>
-              <div class="work-content">
-                <h2 class="w-title">AWS Academy Machine Learning Foundations</h2>
-                <p class="w-ctegory">
-                  Issued July 2022
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="service-box">
-              <div class="work-img">
-                <a href="https://www.coursera.org/account/accomplishments/verify/6JDEUMK3V32G"><img src="assets/img/Certi/deeplearning.jpg" alt="" class="img-fluid"></a>
-              </div>
-              <div class="work-content">
-                <h2 class="w-title">Neural Networks and Deep Learning</h2>
-                <p class="w-ctegory">
-                  Issued August 2022
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        </article>
       </div>
     </section>
 
-    <section class="paralax-mf footer-paralax bg-image sect-mt4 route" style="background-image: url(assets/img/overlay-bg.jpg)">
-      <div class="overlay-mf"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12">
-            <div class="contact-mf">
-              <div id="contact" class="box-shadow-full" style="border-radius: 1rem;">
-                <div class="row">
-              
-                  </div>
-                  <div class="col-md-6">
-                    <div class="title-box-2 pt-4 pt-md-0">
-                      <h5 class="title-left">
-                        Contact
-                      </h5>
-                    </div>
-                    <div class="more-info">
-                      <ul class="list-ico">
-                        <li><span class="ion-email"></span> <a href="mailto:jainamrajput.work@gmail.com">jainamrajput.work@gmail.com</a></li>
-                      </ul>
-                    </div>
-                    <div class="socials">
-                      <ul>
-                        <li><a href="https://www.linkedin.com/in/jainam-rajput-3852661b4/" target="_blank"><span class="ico-circle"><i class="ion-social-linkedin"></i></span></a></li>
-                        <li><a href="https://github.com/Jainam18"><span class="ico-circle" target="_blank"><i class="ion-social-github"></i></span></a></li>
-                        <li><a href="https://www.kaggle.com/jainamrajput"><span class="ico-circle" target="_blank"><i class="fab fa-kaggle"></i></span></a></li>
-                        <li><a href="https://drive.google.com/drive/folders/1jV8hI1q3QqRN8x4rXMlsU0ufbkUZSuUR?usp=sharing" target="_blank"><span class="ico-circle"><img class="img-fluid w-60" src="assets/img/Extras/cv.png"></img></span></a></li> 
-                        <!-- <li><a href="https://twitter.com/"><span class="ico-circle"><i class="ion-social-twitter"></i></span></a></li> -->
-                        <!-- <li><a href="https://www.kaggle.com/jainamrajput"><span class="ico-circle"><i class="fab fa-kaggle"></i></span></a></li>  -->
-                        <!-- <li><a href="https://www.youtube.com/"><span class="ico-circle"><i class="fa fa-youtube-play"></i></span></a></li>
-                         <li><a href="https://medium.com/"><span class="ico-circle"><img class="img-fluid w-60" src="assets/img/Footer/medium.png"></img></span></a></li> 
-                          -->
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+    <!-- Certifications -->
+    <section id="certifications" class="section">
+      <h3 class="section__title">Certifications</h3>
+      <div class="grid grid--3">
+        <article class="card">
+          <a class="card__media" href="https://courses.nvidia.com/certificates/1497129faf3b45918e3b84fc0f1d15be/" target="_blank" rel="noopener">
+            <img src="assets/img/Certi/nvidia.png" alt="NVIDIA CUDA Python">
+          </a>
+          <div class="card__body">
+            <h4 class="card__title">Fundamentals of Accelerated Computing with CUDA Python</h4>
+            <p class="muted">Issued Mar 2024</p>
           </div>
-        </div>
+        </article>
+
+        <article class="card">
+          <a class="card__media" href="https://www.credly.com/badges/4ff6da38-c115-4eb2-973f-eb9e18787896" target="_blank" rel="noopener">
+            <img src="assets/img/Certi/aws_cf.png" alt="AWS Academy Cloud Architecting">
+          </a>
+          <div class="card__body">
+            <h4 class="card__title">AWS Academy Cloud Architecting</h4>
+            <p class="muted">Issued May 2023</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <a class="card__media" href="https://www.credly.com/badges/86ac56ad-fe00-4c9b-982f-728355820fa9" target="_blank" rel="noopener">
+            <img src="assets/img/Certi/aws_de.png" alt="AWS Academy Data Engineering">
+          </a>
+          <div class="card__body">
+            <h4 class="card__title">AWS Academy Data Engineering</h4>
+            <p class="muted">Issued May 2023</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <a class="card__media" href="https://www.credly.com/badges/3d966899-dda7-48e8-b70a-f482496f8001" target="_blank" rel="noopener">
+            <img src="assets/img/Certi/aws_cf.png" alt="AWS Academy Cloud Foundations">
+          </a>
+          <div class="card__body">
+            <h4 class="card__title">AWS Academy Cloud Foundations</h4>
+            <p class="muted">Issued Jun 2022</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <a class="card__media" href="https://www.credly.com/badges/96d38164-5c4c-444b-8ce7-6f50a55b2956/print" target="_blank" rel="noopener">
+            <img src="assets/img/Certi/aws_mlf.png" alt="AWS ML Foundations">
+          </a>
+          <div class="card__body">
+            <h4 class="card__title">AWS Academy Machine Learning Foundations</h4>
+            <p class="muted">Issued Jul 2022</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <a class="card__media" href="https://www.coursera.org/account/accomplishments/verify/6JDEUMK3V32G" target="_blank" rel="noopener">
+            <img src="assets/img/Certi/deeplearning.jpg" alt="Neural Networks and Deep Learning (Coursera)">
+          </a>
+          <div class="card__body">
+            <h4 class="card__title">Neural Networks &amp; Deep Learning</h4>
+            <p class="muted">Issued Aug 2022</p>
+          </div>
+        </article>
       </div>
     </section>
 
+    <!-- Contact -->
+    <section id="contact" class="section card">
+      <h3 class="section__title">Contact</h3>
+      <ul class="list">
+        <li><strong>Email:</strong> 
+          <a href="mailto:jainamrajput.work@gmail.com">jainamrajput.work@gmail.com</a>
+        </li>
+      </ul>
+
+      <!-- Social icons -->
+      <ul class="socials socials--row">
+        <li>
+          <a href="https://www.linkedin.com/in/jainam-rajput-3852661b4/" target="_blank" rel="noopener">
+            <span class="ico-circle"><i class="ion-social-linkedin"></i></span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/Jainam18" target="_blank" rel="noopener">
+            <span class="ico-circle"><i class="ion-social-github"></i></span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.kaggle.com/jainamrajput" target="_blank" rel="noopener">
+            <span class="ico-circle"><i class="fab fa-kaggle"></i></span>
+          </a>
+        </li>
+        <li>
+          <a href="https://drive.google.com/drive/folders/1jV8hI1q3QqRN8x4rXMlsU0ufbkUZSuUR?usp=sharing" target="_blank" rel="noopener">
+            <span class="ico-circle"><img src="assets/img/Extras/cv.png" alt="Resume"></span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    </section>
+
+    <footer class="footer">
+      <p class="muted">© <span id="y"></span> Jainam Rajput · Built with HTML &amp; CSS</p>
+      <a href="#home" class="to-top" aria-label="Back to top">↑</a>
+    </footer>
   </main>
 
-  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-  <div id="preloader"></div>
-
-  <script src="assets/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
-  <script src="assets/vendor/counterup/jquery.counterup.min.js"></script>
-  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script src="assets/vendor/venobox/venobox.min.js"></script>
-  <script src="https://kit.fontawesome.com/577eb74294.js" crossorigin="anonymous"></script>
-
-  <script src="assets/js/main.js"></script>
   <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const toggleSwitch = document.getElementById('theme-toggle');
-    const storedTheme = localStorage.getItem('theme');
+    // current year
+    document.getElementById('y').textContent = new Date().getFullYear();
 
-    if (storedTheme === 'dark') {
-      document.body.classList.add('dark-mode');
-      toggleSwitch.checked = true;
+    // dark mode toggle
+    (function(){
+      const body = document.body;
+      const btn = document.getElementById('themeToggle');
+      const saved = localStorage.getItem('theme');
+      if(saved === 'dark'){ body.classList.add('dark'); btn.textContent = '☀️'; }
+      btn.addEventListener('click', () => {
+        body.classList.toggle('dark');
+        const mode = body.classList.contains('dark') ? 'dark' : 'light';
+        localStorage.setItem('theme', mode);
+        btn.textContent = mode === 'dark' ? '☀️' : '🌙';
+      });
+    })();
+
+    // active nav link on scroll
+    (function(){
+      const links = Array.from(document.querySelectorAll('.nav a[href^="#"], .nav__sublink'));
+      const ids = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+      const onScroll = () => {
+        const pos = window.scrollY + 120;
+        let current = ids[0];
+        ids.forEach(el => { if(el.offsetTop <= pos) current = el; });
+        links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === ('#' + current.id)));
+      };
+      window.addEventListener('scroll', onScroll, {passive:true});
+      onScroll();
+    })();
+
+
+    (function () {
+    // adjust this selector if your grid wrapper is different
+    const grid   = document.querySelector('#projects .grid');
+    const chips  = document.querySelectorAll('[data-filter]');
+    const search = document.getElementById('projectSearch');
+    const cards  = Array.from(document.querySelectorAll('#projects .project'));
+
+    let activeTag = 'all';
+    let q = '';
+
+    const norm = s => (s || '').toLowerCase().trim();
+
+    // simple relevance scoring
+    function scoreCard(card, query, tag) {
+      if (!grid || !card) return -1;
+
+      const title = norm(card.getAttribute('data-title'));
+      const tags  = norm(card.getAttribute('data-tags'));
+      const text  = `${title} ${tags}`;
+
+      if (query === '' && (tag === 'all' || tag === '')) return 0;
+
+      let s = 0;
+
+      // Tag boost if card has the active tag
+      if (tag && tag !== 'all' && tags.includes(tag)) s += 40;
+
+      if (query) {
+        // break query into words
+        const words = query.split(/\s+/).filter(Boolean);
+
+        // strong matches
+        if (title.startsWith(query)) s += 120;
+        if (title.includes(query))   s += 90;
+        if (tags.includes(query))    s += 70;
+
+        // per-word soft matches
+        for (const w of words) {
+          if (title.includes(w)) s += 25;
+          if (tags.includes(w))  s += 20;
+        }
+      }
+
+      return s;
     }
 
-    toggleSwitch.addEventListener('change', function () {
-      if (this.checked) {
-        document.body.classList.add('dark-mode');
-        localStorage.setItem('theme', 'dark');
-      } else {
-        document.body.classList.remove('dark-mode');
-        localStorage.setItem('theme', 'light');
+    function apply() {
+      const query = norm(q);
+      const tag   = norm(activeTag);
+
+      // 1) compute visibility + score for each card
+      cards.forEach(card => {
+        const tags    = norm(card.getAttribute('data-tags'));
+        const title   = norm(card.getAttribute('data-title'));
+        const hay     = `${title} ${tags}`;
+
+        const tagPass = (tag === 'all') || tags.includes(tag);
+        const qPass   = (query === '') || hay.includes(query);
+
+        const visible = tagPass && qPass;
+
+        // visibility class
+        card.classList.toggle('is-hidden', !visible);
+
+        // store score for sorting (hidden => score -1)
+        card._score = visible ? scoreCard(card, query, tag) : -1;
+      });
+
+      // 2) reorder DOM by score (descending), keeping hidden items last
+      const ordered = [...cards].sort((a, b) => (b._score || 0) - (a._score || 0));
+      ordered.forEach(node => grid.appendChild(node)); // re-appending reorders safely
+
+      // 3) scroll first visible result into view (nice UX)
+      const firstVisible = ordered.find(c => c._score >= 0);
+      if (firstVisible) {
+        // Only nudge if it's not already near the viewport
+        const r = firstVisible.getBoundingClientRect();
+        if (r.top < 80 || r.top > window.innerHeight - 200) {
+          firstVisible.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }
+    }
+
+    // chip clicks
+    chips.forEach(btn => {
+      btn.addEventListener('click', () => {
+        chips.forEach(c => c.classList.remove('chip--active'));
+        btn.classList.add('chip--active');
+        activeTag = btn.getAttribute('data-filter');
+        apply();
+      });
+    });
+
+    // search input (debounced)
+    let t = null;
+    search.addEventListener('input', (e) => {
+      q = e.target.value;
+      clearTimeout(t);
+      t = setTimeout(apply, 120);
+    });
+
+    // Cmd/Ctrl+K focus shortcut
+    window.addEventListener('keydown', (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        search.focus();
       }
     });
-  });
-</script>
 
+    // initial render
+    apply();
+  })();
+  (function(){
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const nums = document.querySelectorAll('.stat__num[data-count]');
+    if(!nums.length) return;
 
+    function countUp(el, to, ms=1200){
+      const start = performance.now();
+      const from = 0;
+      const step = (now)=>{
+        const p = Math.min(1, (now - start) / ms);
+        const val = Math.floor(from + (to - from) * (0.5 - Math.cos(Math.PI * p)/2)); // easeInOut
+        el.textContent = val.toLocaleString();
+        if(p < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    }
+
+    const io = new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          const el = entry.target;
+          const to = parseInt(el.getAttribute('data-count'), 10) || 0;
+          el.removeAttribute('data-count');  // one-shot
+          if(prefersReduced){ el.textContent = to.toLocaleString(); }
+          else { countUp(el, to); }
+          io.unobserve(el);
+        }
+      });
+    }, {threshold: 0.3});
+
+    nums.forEach(n => io.observe(n));
+  })();
+  </script>
 </body>
-
 </html>
