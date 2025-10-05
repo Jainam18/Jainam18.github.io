@@ -19,7 +19,7 @@
   <!-- Main CSS -->
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
-<body>
+<body class="dark">
   <!-- ===== Sidebar (sticky) ===== -->
   <aside class="sidebar" aria-label="Primary">
     <div class="brand">
@@ -527,179 +527,185 @@
   </main>
 
   <script>
-    // current year
-    document.getElementById('y').textContent = new Date().getFullYear();
 
-    // dark mode toggle
-    (function(){
-      const body = document.body;
-      const btn = document.getElementById('themeToggle');
-      const saved = localStorage.getItem('theme');
-      if(saved === 'dark'){ body.classList.add('dark'); btn.textContent = '☀️'; }
+  window.addEventListener('load', () => {
+    if (location.hash) {
+      history.replaceState(null, '', ' ');
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    }
+  });
+
+
+  (() => {
+    const y = document.getElementById('y');
+    if (y) y.textContent = new Date().getFullYear();
+  })();
+
+
+  (() => {
+    const body = document.body;
+    const btn  = document.getElementById('themeToggle');
+    const saved = localStorage.getItem('theme');
+
+    const setMode = (mode) => {
+      const isDark = (mode === 'dark');
+      body.classList.toggle('dark', isDark);
+      if (btn) btn.textContent = isDark ? '☀️' : '🌙';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    };
+
+    if (saved === 'light') setMode('light');
+    else setMode('dark'); // default
+
+    if (btn) {
       btn.addEventListener('click', () => {
-        body.classList.toggle('dark');
-        const mode = body.classList.contains('dark') ? 'dark' : 'light';
-        localStorage.setItem('theme', mode);
-        btn.textContent = mode === 'dark' ? '☀️' : '🌙';
+        const next = body.classList.contains('dark') ? 'light' : 'dark';
+        setMode(next);
       });
-    })();
+    }
+  })();
 
-    // active nav link on scroll
-    (function(){
-      const links = Array.from(document.querySelectorAll('.nav a[href^="#"], .nav__sublink'));
-      const ids = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
-      const onScroll = () => {
-        const pos = window.scrollY + 120;
-        let current = ids[0];
-        ids.forEach(el => { if(el.offsetTop <= pos) current = el; });
-        links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === ('#' + current.id)));
-      };
-      window.addEventListener('scroll', onScroll, {passive:true});
-      onScroll();
-    })();
+  (() => {
+    const links = Array.from(document.querySelectorAll('.nav a[href^="#"], .nav__sublink'));
+    if (!links.length) return;
 
+    const ids = links
+      .map(a => document.querySelector(a.getAttribute('href')))
+      .filter(Boolean);
 
-    (function () {
-    // adjust this selector if your grid wrapper is different
+    const onScroll = () => {
+      const pos = window.scrollY + 120;
+      let current = ids[0];
+      ids.forEach(el => { if (el.offsetTop <= pos) current = el; });
+      links.forEach(a => a.classList.toggle('active', a.getAttribute('href') === ('#' + current.id)));
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+
+  (() => {
     const grid   = document.querySelector('#projects .grid');
     const chips  = document.querySelectorAll('[data-filter]');
     const search = document.getElementById('projectSearch');
     const cards  = Array.from(document.querySelectorAll('#projects .project'));
+
+    if (!grid || !cards.length) return;
 
     let activeTag = 'all';
     let q = '';
 
     const norm = s => (s || '').toLowerCase().trim();
 
-    // simple relevance scoring
     function scoreCard(card, query, tag) {
-      if (!grid || !card) return -1;
-
       const title = norm(card.getAttribute('data-title'));
       const tags  = norm(card.getAttribute('data-tags'));
-      const text  = `${title} ${tags}`;
 
-      if (query === '' && (tag === 'all' || tag === '')) return 0;
+      if (!query && (tag === 'all' || !tag)) return 0;
 
       let s = 0;
-
-      // Tag boost if card has the active tag
       if (tag && tag !== 'all' && tags.includes(tag)) s += 40;
 
       if (query) {
-        // break query into words
         const words = query.split(/\s+/).filter(Boolean);
-
-        // strong matches
         if (title.startsWith(query)) s += 120;
         if (title.includes(query))   s += 90;
         if (tags.includes(query))    s += 70;
-
-        // per-word soft matches
         for (const w of words) {
           if (title.includes(w)) s += 25;
           if (tags.includes(w))  s += 20;
         }
       }
-
       return s;
     }
 
-    function apply() {
+    // cause = 'init' | 'chip' | 'search'
+    function apply(cause = 'init') {
       const query = norm(q);
       const tag   = norm(activeTag);
 
-      // 1) compute visibility + score for each card
       cards.forEach(card => {
-        const tags    = norm(card.getAttribute('data-tags'));
-        const title   = norm(card.getAttribute('data-title'));
-        const hay     = `${title} ${tags}`;
+        const tags  = norm(card.getAttribute('data-tags'));
+        const title = norm(card.getAttribute('data-title'));
+        const hay   = `${title} ${tags}`;
 
         const tagPass = (tag === 'all') || tags.includes(tag);
         const qPass   = (query === '') || hay.includes(query);
-
         const visible = tagPass && qPass;
 
-        // visibility class
         card.classList.toggle('is-hidden', !visible);
-
-        // store score for sorting (hidden => score -1)
         card._score = visible ? scoreCard(card, query, tag) : -1;
       });
 
-      // 2) reorder DOM by score (descending), keeping hidden items last
       const ordered = [...cards].sort((a, b) => (b._score || 0) - (a._score || 0));
-      ordered.forEach(node => grid.appendChild(node)); // re-appending reorders safely
+      ordered.forEach(node => grid.appendChild(node));
 
-      // 3) scroll first visible result into view (nice UX)
-      const firstVisible = ordered.find(c => c._score >= 0);
-      if (firstVisible) {
-        // Only nudge if it's not already near the viewport
-        const r = firstVisible.getBoundingClientRect();
-        if (r.top < 80 || r.top > window.innerHeight - 200) {
-          firstVisible.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
+      // Only scroll after actual user interaction
+      if ((cause === 'chip' && tag !== 'all') || (cause === 'search' && query !== '')) {
+        const firstVisible = ordered.find(c => c._score >= 0);
+        if (firstVisible) firstVisible.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }
     }
 
-    // chip clicks
     chips.forEach(btn => {
       btn.addEventListener('click', () => {
         chips.forEach(c => c.classList.remove('chip--active'));
         btn.classList.add('chip--active');
         activeTag = btn.getAttribute('data-filter');
-        apply();
+        apply('chip');
       });
     });
 
-    // search input (debounced)
     let t = null;
-    search.addEventListener('input', (e) => {
-      q = e.target.value;
-      clearTimeout(t);
-      t = setTimeout(apply, 120);
-    });
+    if (search) {
+      search.addEventListener('input', (e) => {
+        q = e.target.value;
+        clearTimeout(t);
+        t = setTimeout(() => apply('search'), 120);
+      });
 
-    // Cmd/Ctrl+K focus shortcut
-    window.addEventListener('keydown', (e) => {
-      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
-        e.preventDefault();
-        search.focus();
-      }
-    });
+      // Cmd/Ctrl+K to focus search
+      window.addEventListener('keydown', (e) => {
+        if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+          e.preventDefault();
+          search.focus();
+        }
+      });
+    }
 
-    // initial render
-    apply();
+    apply('init');
   })();
-  (function(){
+
+
+  (() => {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const nums = document.querySelectorAll('.stat__num[data-count]');
-    if(!nums.length) return;
+    if (!nums.length) return;
 
-    function countUp(el, to, ms=1200){
+    function countUp(el, to, ms = 1200) {
       const start = performance.now();
       const from = 0;
-      const step = (now)=>{
+      const step = (now) => {
         const p = Math.min(1, (now - start) / ms);
-        const val = Math.floor(from + (to - from) * (0.5 - Math.cos(Math.PI * p)/2)); // easeInOut
+        const val = Math.floor(from + (to - from) * (0.5 - Math.cos(Math.PI * p) / 2)); // easeInOut
         el.textContent = val.toLocaleString();
-        if(p < 1) requestAnimationFrame(step);
+        if (p < 1) requestAnimationFrame(step);
       };
       requestAnimationFrame(step);
     }
 
-    const io = new IntersectionObserver(entries=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
           const el = entry.target;
           const to = parseInt(el.getAttribute('data-count'), 10) || 0;
           el.removeAttribute('data-count');  // one-shot
-          if(prefersReduced){ el.textContent = to.toLocaleString(); }
-          else { countUp(el, to); }
+          if (prefersReduced) el.textContent = to.toLocaleString();
+          else countUp(el, to);
           io.unobserve(el);
         }
       });
-    }, {threshold: 0.3});
+    }, { threshold: 0.3 });
 
     nums.forEach(n => io.observe(n));
   })();
